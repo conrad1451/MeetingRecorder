@@ -1,0 +1,89 @@
+/* CHQ: Claude AI (Haiku) generated this file */
+
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --bg: #f6f5f2;
+  --card: #fff;
+  --ink: #1c1b19;
+  --mute: #76736c;
+  --line: #e4e1da;
+  --accent: #d9381e;
+  --ok: #1f7a4d;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #141413;
+    --card: #1f1e1c;
+    --ink: #f1efe9;
+    --mute: #9a968c;
+    --line: #33312d;
+    --accent: #ff5a3d;
+    --ok: #4cc38a;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #141413;
+  --card: #1f1e1c;
+  --ink: #f1efe9;
+  --mute: #9a968c;
+  --line: #33312d;
+  --accent: #ff5a3d;
+  --ok: #4cc38a;
+}
+
+html {
+  scroll-padding-top: env(safe-area-inset-top, 0px);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 15px / 1.5 system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+.wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 20px 16px 48px;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0 0 2px;
+}
+
+.sub {
+  color: var(--mute);
+  margin: 0 0 18px;
+}
+
+h2 {
+  font-size: 16px;
+  margin: 0 0 12px;
+}
+
+.err {
+  background: color-mix(in srgb, var(--accent) 12%, var(--card));
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-top: 12px;
+  font-size: 13.5px;
+}
+
+.empty {
+  color: var(--mute);
+  text-align: center;
+  padding: 12px 0;
+}
