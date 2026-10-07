@@ -1,0 +1,55 @@
+/* CHQ: Claude AI (Haiku) generated this file */
+
+.sources {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  flex: 1 1 150px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1.5px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  text-align: left;
+}
+
+.chip.on {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, var(--card));
+}
+
+.chip:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.chip .ic {
+  font-size: 20px;
+}
+
+.chip b {
+  display: block;
+  font-size: 14px;
+}
+
+.chip small {
+  color: var(--mute);
+  font-size: 12px;
+}
+
+.opt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  color: var(--mute);
+  font-size: 13px;
+}

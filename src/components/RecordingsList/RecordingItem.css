@@ -1,0 +1,39 @@
+.rec-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 10px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.rec-item:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.rec-item video,
+.rec-item audio {
+  width: 100%;
+  border-radius: 10px;
+  background: #000;
+  max-height: 360px;
+}
+
+.rec-item audio {
+  background: none;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: var(--mute);
+  font-size: 13px;
+}
+
+.meta .acts {
+  display: flex;
+  gap: 8px;
+}

@@ -1,0 +1,50 @@
+/* CHQ: Claude AI (Haiku) generated this file */
+
+button.btn {
+  font: inherit;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1.5px solid var(--line);
+  background: var(--card);
+  color: var(--ink);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+button.btn:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+button.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+button.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+button.btn-secondary {
+  background: var(--card);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+button.btn-danger {
+  background: color-mix(in srgb, var(--accent) 12%, var(--card));
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+button.btn-sm {
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+button.btn-md {
+  padding: 10px 20px;
+  font-size: 15px;
+}
