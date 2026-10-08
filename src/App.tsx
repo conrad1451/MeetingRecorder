@@ -63,6 +63,10 @@ export const App: React.FC = () => {
     recordingIdRef,
   });
 
+  useEffect(() => {
+    secondsRef.current = seconds;
+  }, [seconds, secondsRef])
+
   const handleStart = async () => {
     setSeconds(0);
     await start(
