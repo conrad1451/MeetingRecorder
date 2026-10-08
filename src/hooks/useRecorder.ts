@@ -6,7 +6,6 @@ import { SourceConfig } from '../types/media.types';
 import { getMimeType, extractMimeType, getFileExtension } from '../utils/mediaHelpers';
 
 interface UseRecorderProps {
-  state: RecorderState;
   setState: (state: RecorderState) => void;
   onRecordingComplete: (recording: Recording, duration: number) => void;
   onError: (error: string) => void;
@@ -14,7 +13,6 @@ interface UseRecorderProps {
 }
 
 export const useRecorder = ({
-  state,
   setState,
   onRecordingComplete,
   onError,
@@ -79,7 +77,7 @@ export const useRecorder = ({
         const audioStreams = [micStream, screenStream].filter(
           (s) => s && s.getAudioTracks().length > 0
         );
-        let audioTrack: MediaStreamAudioTrack | null = null;
+        let audioTrack: MediaStreamTrack | null = null;
 
         if (audioStreams.length === 1) {
           audioTrack = audioStreams[0]!.getAudioTracks()[0];
@@ -96,7 +94,7 @@ export const useRecorder = ({
         }
 
         // Video compositing
-        let videoTrack: MediaStreamVideoTrack | null = null;
+        let videoTrack: MediaStreamTrack | null = null;
 
         if (screenStream && cameraStream) {
           videoTrack = await compositePictureInPicture(
@@ -112,7 +110,7 @@ export const useRecorder = ({
 
         // Create output stream
         const outputStream = new MediaStream(
-          [videoTrack, audioTrack].filter(Boolean)
+          [videoTrack, audioTrack].filter((t): t is MediaStreamTrack => t != null)
         );
 
         if (videoTrack) {
@@ -219,7 +217,7 @@ async function compositePictureInPicture(
   screenStream: MediaStream,
   cameraStream: MediaStream,
   recorderRef: RecorderRef
-): Promise<MediaStreamVideoTrack> {
+): Promise<MediaStreamTrack> {
   const makeVideo = async (stream: MediaStream) => {
     const v = document.createElement('video');
     v.muted = true;

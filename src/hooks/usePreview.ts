@@ -1,6 +1,6 @@
 // CHQ: Claude AI (Haiku) generated this file
 
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 
 export const usePreview = () => {
   const videoRef = useRef<HTMLVideoElement>(null);

@@ -7,7 +7,8 @@ export interface SourceConfig {
   systemAudio: boolean;
 }
 
-export interface MediaDeviceInfo {
+export interface BrowserSupport {
+// export interface MediaDeviceInfo {
   supportsMediaDevices: boolean;
   supportsMediaRecorder: boolean;
   supportsDisplayMedia: boolean;

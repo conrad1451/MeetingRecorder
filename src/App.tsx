@@ -53,8 +53,7 @@ export const App: React.FC = () => {
     return () => clearInterval(interval);
   }, [state, setSeconds]);
 
-  const { start, stop, pause } = useRecorder({
-    state,
+  const { start, stop, pause, secondsRef } = useRecorder({
     setState,
     onRecordingComplete: (recording) => {
       addRecording(recording);
